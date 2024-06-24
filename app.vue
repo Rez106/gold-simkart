@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h1 class="text-red-500">test</h1>
-  </div>
+  <nuxt-layout name="default">
+    <the-header />
+  </nuxt-layout>
 </template>
 
 <script setup></script>
