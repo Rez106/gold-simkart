@@ -11,6 +11,20 @@ export default defineNuxtConfig({
       locale: {
         locale: "fa",
       },
+      icons: {
+        defaultSet: "mdi",
+      },
+    },
+  },
+  app: {
+    head: {
+      link: [
+        {
+          rel: "icon",
+          type: "image/svg+xml",
+          href: "/logo.svg",
+        },
+      ],
     },
   },
 });
