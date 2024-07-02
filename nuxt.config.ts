@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   pinia: {
     storesDirs: ["./store/**"],
   },
-  css: ["@/assets/fonts/fontiran.css", "@/assets/css/main.css"],
+  css: ["@/assets/css/main.css"],
   vuetify: {
     vuetifyOptions: {
       ssr: {
@@ -41,5 +41,8 @@ export default defineNuxtConfig({
   dir: {
     public: "./public",
     assets: "./src/assets",
+  },
+  tailwindcss: {
+    cssPath: "./assets/css/main.css",
   },
 });
