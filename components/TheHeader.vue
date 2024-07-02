@@ -1,6 +1,6 @@
 <template>
   <header class="w-full bg-main-black-700">
-    <nuxt-layout name="container">
+    <nuxt-layout name="container" class="max-sm:hidden">
       <div class="w-full flex items-center justify-between mb-3">
         <navbar-menu />
         <the-logo />
@@ -28,11 +28,14 @@
             href="tel:+989010000550"
             class="font-semibold duration-150 hover:text-white active:text-white"
             style="direction: ltr"
-            >0901-000-0550</a
           >
+            0901 0000 550
+          </a>
         </div>
       </div>
     </nuxt-layout>
+    <mobile-header />
+    <mobile-menu />
   </header>
 </template>
 
