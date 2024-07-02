@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/leaflet",
     "@pinia/nuxt",
-    "@vueuse/nuxt",
   ],
   pinia: {
     storesDirs: ["./store/**"],
