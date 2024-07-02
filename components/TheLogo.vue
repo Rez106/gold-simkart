@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center gap-3">
+  <div class="w-fit flex items-center gap-3">
     <div class="">
       <h1 class="text-main-black-100 text-xl">
         <span class="text-main-yellow-400 font-semibold">Mozayedeh</span>
