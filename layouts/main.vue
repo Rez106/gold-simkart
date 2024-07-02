@@ -1,9 +1,9 @@
 <template>
-  <main class="w-full flex gap-5 mt-6">
-    <aside class="w-[30%] h-20 bg-white">
+  <main class="w-full flex gap-3 mt-6">
+    <aside class="w-[26%] max-lg:hidden">
       <slot name="sidebar" />
     </aside>
-    <div class="w-[70%] h-20 bg-white">
+    <div class="w-[74%] max-lg:w-full">
       <slot name="page" />
     </div>
   </main>
