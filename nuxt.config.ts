@@ -1,7 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ["@nuxtjs/tailwindcss", "vuetify-nuxt-module", "@vueuse/nuxt"],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "vuetify-nuxt-module",
+    "@vueuse/nuxt",
+    "@nuxtjs/leaflet",
+    "@pinia/nuxt",
+    "@vueuse/nuxt",
+  ],
+  pinia: {
+    storesDirs: ["./store/**"],
+  },
+  css: ["@/assets/fonts/fontiran.css", "@/assets/css/main.css"],
   vuetify: {
     vuetifyOptions: {
       ssr: {
@@ -10,6 +21,7 @@ export default defineNuxtConfig({
       directives: "Ripple",
       locale: {
         locale: "fa",
+        fallback: "en",
       },
       icons: {
         defaultSet: "mdi",
@@ -26,5 +38,9 @@ export default defineNuxtConfig({
         },
       ],
     },
+  },
+  dir: {
+    public: "./public",
+    assets: "./src/assets",
   },
 });
