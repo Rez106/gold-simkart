@@ -1,5 +1,7 @@
 <template>
-  <section class="w-full flex items-center max-sm:flex-col justify-around">
+  <section
+    class="w-full flex items-center max-lg:gap-10 max-sm:flex-col justify-around"
+  >
     <div class="sm:w-[30%] flex items-center sm:flex-col">
       <h1 class="text-white text-3xl font-bold self-start">خدمات</h1>
       <h1
@@ -14,7 +16,7 @@
       </div>
     </div>
     <div
-      class="w-full h-[200px] mt-5 2xl:h-[400px] 2xl:min-w-[600px] bg-white p-2 rounded-lg"
+      class="w-full h-[200px] mt-5 2xl:h-[400px] lg:w-[600px] bg-white p-2 rounded-lg"
     >
       <LMap
         :zoom="13"

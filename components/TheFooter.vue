@@ -4,7 +4,7 @@
       <div
         class="flex items-center justify-between max-sm:flex-col max-sm:gap-3"
       >
-        <section class="flex items-start max-sm:flex-col gap-10 order-2">
+        <section class="flex items-start max-sm:flex-col gap-10 max-sm:order-2">
           <div class="flex flex-col items-start">
             <div
               class="flex py-4 items-center gap-1 font-semibold text-main-black-100"
@@ -70,7 +70,7 @@
           </div>
         </section>
         <section
-          class="flex flex-col gap-3 items-end max-sm:items-center order-1"
+          class="flex flex-col gap-3 items-end max-sm:items-center max-sm:order-1"
         >
           <the-logo />
           <p
