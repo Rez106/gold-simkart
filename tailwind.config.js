@@ -44,6 +44,9 @@ export default {
           950: "#191919",
         },
       },
+      screens: {
+        small: "350px",
+      },
     },
   },
   plugins: [],
