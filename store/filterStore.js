@@ -4,6 +4,9 @@ import numbers1 from "~/data/numbers";
 export const useFilterStore = defineStore("filterStore", () => {
   const numbers = ref(numbers1);
 
+  const isAllOperators = ref(true);
+  const isAllStatus = ref(true);
+  const isAllPreCode = ref(true);
   const selectedOperators = ref([]);
   const selectedStatus = ref([]);
   const selectedPreCode = ref([]);
@@ -25,6 +28,9 @@ export const useFilterStore = defineStore("filterStore", () => {
     enteredMinPrice.value = 0;
     enteredMaxPrice.value = null;
     selectedCategory.value = null;
+    isAllOperators.value = true;
+    isAllStatus.value = true;
+    isAllPreCode.value = true;
   };
 
   const searchHandler = () => {
@@ -41,6 +47,9 @@ export const useFilterStore = defineStore("filterStore", () => {
     enteredMaxPrice,
     selectedCategory,
     selectedSort,
+    isAllOperators,
+    isAllStatus,
+    isAllPreCode,
     reset,
     searchHandler,
   };

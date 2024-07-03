@@ -4,7 +4,7 @@
       label="همه"
       density="compact"
       :hide-details="true"
-      v-model="isAllSelected"
+      v-model="isAllStatus"
       color="white"
       @update:modelValue="selectAllHandler"
     />
@@ -24,16 +24,14 @@
 
 <script setup>
   const filterStore = useFilterStore();
-  const { selectedStatus } = storeToRefs(filterStore);
-
-  const isAllSelected = ref(selectedStatus.value.length === 0);
+  const { selectedStatus, isAllStatus } = storeToRefs(filterStore);
 
   const selectAllHandler = () => {
     selectedStatus.value = [];
   };
 
   const selectHandler = () => {
-    isAllSelected.value = false;
+    isAllStatus.value = false;
   };
 
   const status = [

@@ -30,7 +30,7 @@
       density="compact"
       :hide-details="true"
       color="white"
-      v-model="isAllSelected"
+      v-model="isAllPreCode"
       @update:modelValue="selectAllHandler"
     />
     <v-checkbox
@@ -49,10 +49,7 @@
 
 <script setup>
   const filterStore = useFilterStore();
-  const { selectedPreCode: checked } = storeToRefs(filterStore);
-  // const checked = ref([]);
-
-  const isAllSelected = ref(checked.value.length === 0);
+  const { selectedPreCode: checked, isAllPreCode } = storeToRefs(filterStore);
 
   const preCodes = [
     "0912",
@@ -94,12 +91,11 @@
   ];
 
   const selectAllHandler = () => {
-    // selectedPreCode.value = [];
     return (checked.value = []);
   };
 
   const selectPreCodeHandler = () => {
-    isAllSelected.value = false;
+    isAllPreCode.value = false;
   };
 
   const searchedPreCode = ref(preCodes);

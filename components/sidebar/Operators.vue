@@ -4,7 +4,7 @@
       label="همه"
       density="compact"
       :hide-details="true"
-      v-model="isAllSelected"
+      v-model="isAllOperators"
       color="white"
       @update:modelValue="selectAllHandler"
     />
@@ -24,16 +24,14 @@
 
 <script setup>
   const filterStore = useFilterStore();
-  const { selectedOperators } = storeToRefs(filterStore);
-
-  const isAllSelected = ref(selectedOperators.value.length === 0);
+  const { selectedOperators, isAllOperators } = storeToRefs(filterStore);
 
   const selectAllHandler = () => {
     selectedOperators.value = [];
   };
 
   const selectHandler = () => {
-    isAllSelected.value = false;
+    isAllOperators.value = false;
   };
 
   const operators = [
