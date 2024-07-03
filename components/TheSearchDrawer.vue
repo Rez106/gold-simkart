@@ -1,5 +1,14 @@
 <template>
   <div
+    class="min-w-full duration-300 h-dvh overflow-hidden z-10 fixed right-0 bg-main-black-900 bg-opacity-50"
+    :class="{
+      'opacity-100 top-0': toggleSearch,
+      'opacity-0 -top-full': !toggleSearch,
+    }"
+    @click="closeSearch"
+  ></div>
+
+  <div
     class="lg:hidden z-20 duration-500 max-h-dvh fixed right-0 w-full min-[500px]:min-h-[60dvh] rounded-t-xl shadow-inner shadow-main-black-900 p-2 pb-0 bg-gradient-to-tr from-main-black-950 to-main-black-900"
     :class="{ 'bottom-0': toggleSearch, '-bottom-full': !toggleSearch }"
   >

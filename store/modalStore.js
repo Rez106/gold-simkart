@@ -6,16 +6,20 @@ export const useModalStore = defineStore("modalStore", () => {
 
   const openSearch = () => {
     toggleSearch.value = true;
+    document.querySelector("html").style.overflow = "hidden";
   };
   const closeSearch = () => {
     toggleSearch.value = false;
+    document.querySelector("html").style.overflow = "auto";
   };
 
   const openMenu = () => {
     toggleMenu.value = true;
+    document.querySelector("html").style.overflow = "hidden";
   };
   const closeMenu = () => {
     toggleMenu.value = false;
+    document.querySelector("html").style.overflow = "auto";
   };
 
   return {
