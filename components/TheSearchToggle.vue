@@ -8,7 +8,10 @@
     }"
     @click="openSearch"
   >
-    <div class="w-full flex items-center gap-2 justify-center">
+    <div
+      v-if="!searchError && !searchIsLoading"
+      class="w-full flex items-center gap-2 justify-center"
+    >
       <v-icon icon="mdi-magnify" color="#3d3d3d" size="x-large" />
       <transition appear name="fade" mode="out-in">
         <span v-if="isShown" class="text-xl font-semibold text-main-black-700"
@@ -16,14 +19,24 @@
         >
       </transition>
     </div>
+    <Vue3Lottie
+      v-if="!searchError && searchIsLoading"
+      :animation-data="loading"
+      :width="40"
+      :height="40"
+    />
   </div>
 </template>
 
 <script setup>
+  import loading from "../../public/lottie/loading.json";
+  import { Vue3Lottie } from "vue3-lottie";
   const { isShown } = useToggleScroll();
 
   const modalStore = useModalStore();
   const { toggleSearch } = storeToRefs(modalStore);
+  const filterStore = useFilterStore();
+  const { searchError, searchIsLoading } = storeToRefs(filterStore);
   const { openSearch } = modalStore;
 </script>
 
