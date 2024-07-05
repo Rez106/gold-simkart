@@ -10,4 +10,20 @@
   </nuxt-layout>
 </template>
 
-<script setup></script>
+<script setup>
+  const filterStore = useFilterStore();
+  const { initialNumbersData } = filterStore;
+
+  const { execute } = await useAsyncData(
+    "filter",
+    () => initialNumbersData().then(() => true),
+    {
+      immediate: false,
+      watch: false,
+    }
+  );
+
+  onMounted(async () => {
+    await execute();
+  });
+</script>

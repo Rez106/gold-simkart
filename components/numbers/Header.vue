@@ -28,13 +28,26 @@
 
 <script setup>
   const filterStore = useFilterStore();
+  const { searchHandler } = filterStore;
   const { selectedSort } = storeToRefs(filterStore);
-  const sortHandler = (val) => {
+
+  const { execute } = await useAsyncData(
+    "filter",
+    () => searchHandler().then(() => true),
+    {
+      immediate: false,
+      watch: false,
+    }
+  );
+
+  const sortHandler = async (val) => {
     if (val === 0) {
       selectedSort.value = null;
     } else {
       selectedSort.value = val;
     }
+
+    return await execute();
   };
 </script>
 
