@@ -1,9 +1,33 @@
 import { defineStore } from "pinia";
 import numbers1 from "~/data/numbers";
 
-export const useFilterStore = defineStore("filterStore", () => {
-  const numbers = ref(numbers1);
+const formatArray = (array) => {
+  return array.join(",");
+};
 
+const formatSort = (sortId) => {
+  return sortId === 0
+    ? null
+    : sortId === 1
+    ? "lowest_price"
+    : sortId === 2
+    ? "highest_price"
+    : sortId === 3
+    ? "discount_amount"
+    : null;
+};
+
+export const useFilterStore = defineStore("filterStore", () => {
+  const { closeSearch } = useModalStore();
+
+  //Main Data
+  const numbers = ref([]);
+
+  //Search Request
+  const searchError = ref(null);
+  const searchIsLoading = ref(true);
+
+  //Filters and Conditions for checkboxes etc.
   const isAllOperators = ref(true);
   const isAllStatus = ref(true);
   const isAllPreCode = ref(true);
@@ -33,8 +57,67 @@ export const useFilterStore = defineStore("filterStore", () => {
     isAllPreCode.value = true;
   };
 
-  const searchHandler = () => {
-    console.log("slm");
+  const searchHandler = async () => {
+    const formattedOpts = formatArray(selectedOperators.value);
+    const formattedStatus = formatArray(selectedStatus.value);
+    const formattedPreCode = formatArray(selectedPreCode.value);
+    // `/api/numbers?operators=${formattedOpts}&status=${formattedStatus}&preCode=${formattedPreCode}`;
+    try {
+      searchIsLoading.value = true;
+      searchError.value = null;
+      closeSearch();
+      await $fetch(`/api/numbers`, {
+        query: {
+          operators: formattedOpts,
+          status: formattedStatus,
+          preCodes: formattedPreCode,
+          digit: enteredNumbers.value,
+          minPrice: enteredMinPrice.value,
+          maxPrice: enteredMaxPrice.value,
+          category:
+            selectedCategory.value === null ? null : !!selectedCategory.value,
+          sort: formatSort(selectedSort.value),
+        },
+        method: "GET",
+      });
+    } catch (error) {
+      searchError.value = error;
+      throw createError({
+        ...error,
+      });
+    } finally {
+      searchIsLoading.value = false;
+    }
+  };
+
+  const initialNumbersData = async () => {
+    try {
+      searchIsLoading.value = true;
+      searchError.value = null;
+      const response = await $fetch(`/api/numbers`, {
+        query: {
+          operators: null,
+          status: null,
+          preCodes: null,
+          digit: null,
+          minPrice: null,
+          maxPrice: null,
+          category: null,
+          sort: null,
+        },
+        method: "GET",
+      });
+
+      const data = await response.data;
+      numbers.value = data;
+    } catch (error) {
+      searchError.value = error;
+      throw createError({
+        ...error,
+      });
+    } finally {
+      searchIsLoading.value = false;
+    }
   };
 
   return {
@@ -50,7 +133,10 @@ export const useFilterStore = defineStore("filterStore", () => {
     isAllOperators,
     isAllStatus,
     isAllPreCode,
+    searchIsLoading,
+    searchError,
     reset,
     searchHandler,
+    initialNumbersData,
   };
 });
