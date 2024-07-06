@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import numbers1 from "~/data/numbers";
 
 const formatArray = (array) => {
   return array.join(",");
@@ -13,7 +12,7 @@ const formatSort = (sortId) => {
     : sortId === 2
     ? "highest_price"
     : sortId === 3
-    ? "discount_amount"
+    ? "discount"
     : null;
 };
 
@@ -61,30 +60,27 @@ export const useFilterStore = defineStore("filterStore", () => {
     const formattedOpts = formatArray(selectedOperators.value);
     const formattedStatus = formatArray(selectedStatus.value);
     const formattedPreCode = formatArray(selectedPreCode.value);
-    // `/api/numbers?operators=${formattedOpts}&status=${formattedStatus}&preCode=${formattedPreCode}`;
+
     try {
       searchIsLoading.value = true;
       searchError.value = null;
       closeSearch();
-      await $fetch(`/api/numbers`, {
+      await $fetch("/api/numbers/search", {
         query: {
-          operators: formattedOpts,
+          operator_type: formattedOpts,
           status: formattedStatus,
-          preCodes: formattedPreCode,
+          pre_code: formattedPreCode,
           digit: enteredNumbers.value,
-          minPrice: enteredMinPrice.value,
-          maxPrice: enteredMaxPrice.value,
+          min_price: enteredMinPrice.value,
+          max_price: enteredMaxPrice.value,
           category:
             selectedCategory.value === null ? null : !!selectedCategory.value,
-          sort: formatSort(selectedSort.value),
+          sort_by: formatSort(selectedSort.value),
         },
         method: "GET",
       });
     } catch (error) {
       searchError.value = error;
-      throw createError({
-        ...error,
-      });
     } finally {
       searchIsLoading.value = false;
     }
@@ -94,27 +90,10 @@ export const useFilterStore = defineStore("filterStore", () => {
     try {
       searchIsLoading.value = true;
       searchError.value = null;
-      const response = await $fetch(`/api/numbers`, {
-        query: {
-          operators: null,
-          status: null,
-          preCodes: null,
-          digit: null,
-          minPrice: null,
-          maxPrice: null,
-          category: null,
-          sort: null,
-        },
-        method: "GET",
-      });
-
-      const data = await response.data;
-      numbers.value = data;
+      const response = await $fetch("/api/numbers", { method: "GET" });
+      numbers.value = response;
     } catch (error) {
       searchError.value = error;
-      throw createError({
-        ...error,
-      });
     } finally {
       searchIsLoading.value = false;
     }
