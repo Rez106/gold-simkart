@@ -14,7 +14,7 @@
             class="flex flex-col gap-2 w-full p-4"
           >
             <div
-              v-for="i in 15"
+              v-for="i in 6"
               :key="i"
               class="flex items-center justify-evenly max-sm:justify-between max-sm:px-2 sm:gap-10 border-[1px] py-4 sm:px-10 rounded-lg border-main-black-700"
             >
@@ -32,7 +32,7 @@
             class="w-full flex flex-col items-center gap-3 mt-10"
           >
             <h1 class="text-main-yellow-400 text-xl">
-              چیزی پیدا نشد بعدا امتحان کنید
+              چیزی پیدا نشد فیلتر دیگری امتحان کنید
             </h1>
             <Vue3Lottie
               :animation-data="numberserror"
@@ -53,7 +53,10 @@
           />
         </div>
 
-        <numbers-pagination @updatePage="pageHandler" />
+        <numbers-pagination
+          @updatePage="pageHandler"
+          :length="Math.floor(allNumbers?.length / 15)"
+        />
       </div>
     </template>
   </nuxt-layout>

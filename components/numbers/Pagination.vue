@@ -1,10 +1,13 @@
 <template>
-  <div class="w-full flex items-center justify-center text-white">
+  <div
+    class="w-full flex items-center justify-center text-white"
+    v-if="length > 0"
+  >
     <v-pagination
-      :length="2"
+      :length="length"
       next-icon="mdi-menu-right"
       prev-icon="mdi-menu-left"
-      :total-visible="5"
+      :total-visible="4"
       v-model="page"
       @update:modelValue="onPageUpdate"
       rounded="lg"
@@ -13,6 +16,10 @@
 </template>
 
 <script setup>
+  defineProps({
+    length: Number,
+  });
+
   const page = ref(1);
 
   const emits = defineEmits(["updatePage"]);

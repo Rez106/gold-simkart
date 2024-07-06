@@ -12,7 +12,7 @@
           class="block text-main-black-300 font-semibold text-sm"
           style="direction: ltr"
         >
-          {{ num.mask_digit.split("-").join(" ") }}
+          {{ num.mask_digits }}
         </span>
       </div>
       <div class="flex items-center gap-2">
@@ -28,7 +28,7 @@
 
     <div class="w-1/4 text-center">
       <div
-        v-if="num.discount_amount > 0"
+        v-if="num.discount_amount > 0 && !num.price_enabled"
         class="w-full flex items-center justify-center gap-3 text-center"
       >
         <div>
@@ -49,7 +49,7 @@
           class="block text-main-black-200 font-semibold bg-red-500 rounded-lg p-1 text-xs"
           style="direction: ltr"
         >
-          {{ discountPercent(num.price, num.discount_amount) }}
+          {{ num.discount_percentage }}
         </span>
       </div>
       <div
@@ -60,7 +60,7 @@
           class="block text-main-black-300 font-semibold"
           style="direction: ltr"
         >
-          {{ priceFormatter(num.price) }}
+          {{ num.price_enabled ? priceFormatter(num.price) : "تماس بگیرید" }}
         </span>
       </div>
     </div>
@@ -107,11 +107,11 @@
       : "";
   };
 
-  const discountPercent = (price, discount) => {
-    const discountValue = price - discount;
-    const discountPercentage = (discountValue / price) * 100;
-    return discountPercentage.toFixed(0) + "%";
-  };
+  // const discountPercent = (price, discount) => {
+  //   const discountValue = price - discount;
+  //   const discountPercentage = (discountValue / price) * 100;
+  //   return discountPercentage.toFixed(0) + "%";
+  // };
 </script>
 
 <style lang="scss" scoped></style>

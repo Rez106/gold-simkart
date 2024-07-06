@@ -1,22 +1,20 @@
 <template>
   <div class="w-full flex items-center gap-3 justify-center">
     <v-btn
-      :prepend-icon="
-        !searchError && !searchIsLoading ? 'mdi-magnify' : undefined
-      "
+      :prepend-icon="!searchIsLoading ? 'mdi-magnify' : undefined"
       color="#ffda0a"
-      class="mt-3 flex-1"
-      text=""
+      class="mt-3 flex-1 duration-200"
       rounded="lg"
       size="large"
       @click="search"
+      :disabled="searchIsLoading"
     >
-      <span v-if="!searchError && !searchIsLoading">اعمال و جستجو</span>
+      <span v-if="!searchIsLoading">اعمال و جستجو</span>
       <Vue3Lottie
         v-if="!searchError && searchIsLoading"
         :animation-data="loading"
-        :width="40"
-        :height="40"
+        :width="50"
+        :height="50"
       />
     </v-btn>
     <v-btn

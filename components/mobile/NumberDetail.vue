@@ -45,7 +45,7 @@
       color="#222222"
       class="w-fit self-center"
       style="border: 1px solid #ffda0a; color: #ffda0a"
-      href="tel:+989010000550"
+      to="/contact"
     ></v-btn>
   </div>
 </template>
