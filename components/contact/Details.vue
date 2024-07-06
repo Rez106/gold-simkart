@@ -28,7 +28,7 @@
     >
       <div class="relative py-4">
         <div
-          class="absolute top-1/3 -right-10 p-2 bg-gradient-to-tr from-main-black-900 to-main-black-800 shadow-md rounded-lg text-white font-semibold"
+          class="w-fit absolute top-1/3 -right-10 max-sm:static p-2 bg-gradient-to-tr from-main-black-900 to-main-black-800 shadow-md rounded-lg text-white font-semibold"
         >
           <v-icon
             icon="mdi-phone"
@@ -36,6 +36,7 @@
             size="large"
             style="transform: rotate(270deg)"
           />
+          <span class="sm:hidden"> شماره‌ تماس </span>
         </div>
         <div class="flex flex-col items-end gap-2">
           <a
@@ -66,11 +67,12 @@
         class="not-italic flex flex-col items-start gap-5 relative px-4 py-6"
       >
         <div
-          class="absolute top-1/3 -right-10 p-2 bg-gradient-to-tr from-main-black-900 to-main-black-800 shadow-md rounded-lg text-white font-semibold"
+          class="w-fit absolute top-1/3 -right-10 max-sm:static p-2 bg-gradient-to-tr from-main-black-900 to-main-black-800 shadow-md rounded-lg text-white font-semibold"
         >
           <v-icon icon="mdi-map-marker" color="#fff" size="large" />
+          <span class="sm:hidden"> آدرس </span>
         </div>
-        <p class="text-white font-medium">
+        <p class="text-white font-medium text-center">
           اصفهان، سیتی‌سنتر، طبقه دوم،
           <span class="text-main-yellow-400">مزایده</span> سیم‌کارت
         </p>
