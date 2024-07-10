@@ -65,7 +65,7 @@ export const useFilterStore = defineStore("filterStore", () => {
       searchIsLoading.value = true;
       searchError.value = null;
       closeSearch();
-      await $fetch("/api/numbers/search", {
+      const response = await $fetch("/api/numbers/search", {
         query: {
           operator_type: formattedOpts,
           status: formattedStatus,
@@ -79,6 +79,7 @@ export const useFilterStore = defineStore("filterStore", () => {
         },
         method: "GET",
       });
+      numbers.value = response;
     } catch (error) {
       searchError.value = error;
     } finally {
