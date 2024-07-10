@@ -28,7 +28,7 @@
 
     <div class="w-1/4 text-center">
       <div
-        v-if="num.discount_amount > 0 && !num.price_enabled"
+        v-if="num.discount_amount > 0 && !num.price_enable"
         class="w-full flex items-center justify-center gap-3 text-center"
       >
         <div>
@@ -60,7 +60,7 @@
           class="block text-main-black-300 font-semibold"
           style="direction: ltr"
         >
-          {{ num.price_enabled ? priceFormatter(num.price) : "تماس بگیرید" }}
+          {{ num.price_enable ? priceFormatter(num.price) : "تماس بگیرید" }}
         </span>
       </div>
     </div>

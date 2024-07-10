@@ -15,7 +15,7 @@
       </span>
     </div>
     <div
-      v-if="num.discount_amount > 0 && !num.price_enable"
+      v-if="num.discount_amount > 0 && num.price_enable"
       class="w-1/4 flex items-center justify-center gap-3 text-center"
     >
       <div>
