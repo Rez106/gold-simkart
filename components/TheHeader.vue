@@ -2,8 +2,8 @@
   <header class="w-full bg-main-black-700">
     <nuxt-layout name="container" class="max-sm:hidden">
       <div class="w-full flex items-center justify-between mb-3">
-        <navbar-menu />
-        <the-logo />
+        <navbar-menu class="-mt-1" />
+        <the-logo class="!mt-2" />
         <the-socials />
       </div>
       <v-divider />

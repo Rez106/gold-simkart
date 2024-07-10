@@ -2,9 +2,10 @@
   <footer class="mt-10 w-full bg-main-black-700 pt-8">
     <nuxt-layout name="container">
       <div
-        class="flex items-center justify-between max-sm:flex-col max-sm:gap-3"
+        class="flex sm:items-center justify-between max-sm:flex-col max-sm:gap-3"
       >
-        <section class="flex items-start max-sm:flex-col gap-10 max-sm:order-2">
+        <the-logo v-if="$vuetify.display.smAndDown" />
+        <section class="flex items-start max-sm:flex-col gap-10">
           <div class="flex flex-col items-start">
             <div
               class="flex py-4 items-center gap-1 font-semibold text-main-black-100"
@@ -69,10 +70,8 @@
             </ul>
           </div>
         </section>
-        <section
-          class="flex flex-col gap-3 items-end max-sm:items-center max-sm:order-1"
-        >
-          <the-logo />
+        <section class="flex flex-col gap-3 items-end max-sm:items-center">
+          <the-logo v-if="!$vuetify.display.smAndDown" />
           <p
             class="text-white opacity-80 text-sm font-semibold self-start max-sm:self-center"
           >
@@ -100,5 +99,3 @@
 <script setup>
   const router = useRouter();
 </script>
-
-<style lang="scss" scoped></style>

@@ -28,7 +28,7 @@
 
     <div class="w-1/4 text-center">
       <div
-        v-if="num.discount_amount > 0 && !num.price_enable"
+        v-if="num.discount_amount > 0 && num.price_enable"
         class="w-full flex items-center justify-center gap-3 text-center"
       >
         <div>
@@ -49,7 +49,7 @@
           class="block text-main-black-200 font-semibold bg-red-500 rounded-lg p-1 text-xs"
           style="direction: ltr"
         >
-          {{ num.discount_percentage }}
+          {{ num.discount_percentage + "%" }}
         </span>
       </div>
       <div

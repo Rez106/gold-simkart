@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center gap-5">
+  <div class="flex items-center gap-3">
     <nuxt-link
       to="https://www.instagram.com/mozayede_simkart2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
       target="_blank"
