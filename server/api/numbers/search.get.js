@@ -2,7 +2,7 @@ export default defineEventHandler(async (event) => {
   const queries = getQuery(event);
 
   try {
-    const response = await $fetch("http://127.0.0.1:8000/api", {
+    const response = await $fetch("https://goldsim5.liara.run/api", {
       query: {
         format: "json",
         operator_type: queries.operator_type,
