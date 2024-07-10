@@ -90,7 +90,7 @@
           برداری، موجب پیگرد قانونی است.
         </p>
         <h5 style="direction: ltr" class="text-white opacity-50 text-xs">
-          © 2024 goldsimkart.ir
+          © 2024 Copyright
         </h5>
       </section>
     </nuxt-layout>
