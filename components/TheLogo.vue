@@ -4,7 +4,7 @@
       <v-img src="/logo.svg" width="40" height="60" />
       <div class="">
         <h1 class="text-main-black-100 text-xl">
-          <span class="text-main-yellow-400 font-semibold">Mozayedeh</span>
+          <span class="text-main-yellow-400 font-semibold">Mozayede</span>
           Simkart
         </h1>
         <h5 class="text-main-black-100 text-lg">
