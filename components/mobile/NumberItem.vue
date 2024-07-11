@@ -36,7 +36,7 @@
             class="block text-main-yellow-400 font-semibold"
             style="direction: ltr"
           >
-            {{ num.discount_amount }}
+            {{ priceFormatter(num.discount_amount) }}
           </span>
           <span
             class="block text-main-black-300 text-xs line-through"
@@ -44,6 +44,7 @@
           >
             {{ priceFormatter(num.price) }}
           </span>
+          <span class="text-xs text-white">تومان</span>
         </div>
         <span
           class="block text-main-black-200 font-semibold bg-red-500 rounded-lg p-1 text-xs"
@@ -61,6 +62,7 @@
           style="direction: ltr"
         >
           {{ num.price_enable ? priceFormatter(num.price) : "تماس بگیرید" }}
+          <span v-if="num.price_enable" class="text-xs text-white">تومان</span>
         </span>
       </div>
     </div>
