@@ -12,18 +12,19 @@
 
 <script setup>
   const filterStore = useFilterStore();
-  const { initialNumbersData } = filterStore;
+  const { searchHandler } = filterStore;
+  const { selectedSort } = storeToRefs(filterStore);
 
   const { execute } = await useAsyncData(
     "filter",
-    () => initialNumbersData().then(() => true),
+    () => searchHandler().then(() => true),
     {
       immediate: false,
       watch: false,
     }
   );
-
   onMounted(async () => {
-    await execute();
+    selectedSort.value = 3;
+    return await execute();
   });
 </script>

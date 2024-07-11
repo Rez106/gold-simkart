@@ -87,19 +87,6 @@ export const useFilterStore = defineStore("filterStore", () => {
     }
   };
 
-  const initialNumbersData = async () => {
-    try {
-      searchIsLoading.value = true;
-      searchError.value = null;
-      const response = await $fetch("/api/numbers", { method: "GET" });
-      numbers.value = response;
-    } catch (error) {
-      searchError.value = error;
-    } finally {
-      searchIsLoading.value = false;
-    }
-  };
-
   return {
     allNumbers,
     selectedOperators,
@@ -117,6 +104,5 @@ export const useFilterStore = defineStore("filterStore", () => {
     searchError,
     reset,
     searchHandler,
-    initialNumbersData,
   };
 });

@@ -12,6 +12,7 @@
       <base-toggle-buttons
         :values="['همه', 'ارزان‌ترین', 'گران‌ترین', 'تخفیف‌دار']"
         @updateValue="sortHandler"
+        :isSort="true"
       />
     </div>
     <div
@@ -49,6 +50,11 @@
 
     return await execute();
   };
+
+  onMounted(async () => {
+    selectedSort.value = 3;
+    return await execute();
+  });
 </script>
 
 <style lang="scss" scoped></style>

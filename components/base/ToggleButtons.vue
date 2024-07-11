@@ -26,8 +26,9 @@
 </template>
 
 <script setup>
-  defineProps({
+  const { isSort } = defineProps({
     values: Array,
+    isSort: Boolean,
   });
   const emits = defineEmits(["updateValue"]);
   const selected = ref(0);
@@ -35,6 +36,10 @@
   const emitUpdateValue = (val) => {
     emits("updateValue", val);
   };
+
+  onMounted(() => {
+    return (selected.value = isSort ? 3 : 0);
+  });
 </script>
 
 <style lang="scss" scoped></style>
