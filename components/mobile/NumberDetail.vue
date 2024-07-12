@@ -15,9 +15,10 @@
         <span> اپراتور: </span>
         <div class="bg-main-black-100 rounded-lg p-1">
           <v-img
-            :src="'/images/' + num.operator_type + '.svg'"
+            :src="'/Images/' + num.operator_type + '.svg'"
             width="30"
             height="30"
+            :alt="num.operator_type + 'logo'"
           />
         </div>
         <span class="text-white">
