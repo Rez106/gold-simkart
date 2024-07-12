@@ -49,7 +49,7 @@
   import { mdiHome } from "@mdi/js";
 
   const error = useError();
-  console.log(error.value);
+
   useHead({
     title: "سیم‌کارت | " + error?.value?.statusCode,
   });
