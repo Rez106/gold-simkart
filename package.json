@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "start":"node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs"
   },
   "dependencies": {
     "@nuxtjs/leaflet": "^1.0.14",
@@ -23,6 +23,7 @@
     "vuetify-nuxt-module": "^0.14.1"
   },
   "devDependencies": {
+    "@mdi/js": "^7.4.47",
     "@nuxtjs/tailwindcss": "^6.12.0"
   }
 }

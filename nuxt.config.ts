@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   devtools: { enabled: false },
   modules: [
@@ -23,7 +24,7 @@ export default defineNuxtConfig({
         fallback: "en",
       },
       icons: {
-        defaultSet: "mdi",
+        defaultSet: "mdi-svg",
       },
     },
   },
