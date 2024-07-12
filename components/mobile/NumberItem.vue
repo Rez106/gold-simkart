@@ -6,7 +6,7 @@
       'bg-main-black-600': !isShow,
     }"
   >
-    <div class="w-2/6 max-small:w-[43%] flex flex-col gap-2 pr-4">
+    <div class="w-[36%] max-small:w-[43%] flex flex-col gap-2 pr-4">
       <div class="w-full text-right">
         <span
           class="block text-main-black-300 font-semibold text-sm"
@@ -29,11 +29,11 @@
     <div class="w-1/4 text-center">
       <div
         v-if="num.discount_amount > 0 && num.price_enable"
-        class="w-full flex items-center justify-center gap-3 text-center"
+        class="w-full flex items-center justify-center gap-3 max-sm:gap-1 text-center"
       >
         <div>
           <span
-            class="block text-main-yellow-400 font-semibold"
+            class="block text-main-yellow-400 font-semibold text-sm"
             style="direction: ltr"
           >
             {{ priceFormatter(num.discount_amount) }}
@@ -58,7 +58,7 @@
         class="w-full flex items-center justify-center gap-3 text-center"
       >
         <span
-          class="block text-main-black-300 font-semibold"
+          class="block text-main-black-300 font-semibold text-sm"
           style="direction: ltr"
         >
           {{ num.price_enable ? priceFormatter(num.price) : "تماس بگیرید" }}

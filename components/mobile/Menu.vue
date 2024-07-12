@@ -54,7 +54,7 @@
           </p>
           <a
             href="tel:+989010000550"
-            class="font-semibold duration-150 text-main-yellow-400 hover:text-white active:text-white text-xl"
+            class="font-semibold duration-150 text-main-yellow-400 hover:text-white active:text-white"
             style="direction: ltr"
           >
             0901 0000 550
