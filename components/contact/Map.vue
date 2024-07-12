@@ -12,7 +12,7 @@
       <h1 class="underlined underline-overflow after:w-24"></h1>
       <h1 class="underlined underline-overflow after:w-8"></h1>
       <div class="self-end">
-        <v-icon icon="mdi-store" size="80" color="#fff" />
+        <v-icon :icon="mdiStore" size="80" color="#fff" />
       </div>
     </div>
     <div
@@ -33,7 +33,7 @@
           <LPopup> مزایده سیم‌کارت </LPopup>
           <LIcon :icon-size="[50, 80]" class-name="leaflet">
             <v-icon
-              icon="mdi-map-marker"
+              :icon="mdiMapMarker"
               size="50"
               class="text-main-black-700"
             />
@@ -44,6 +44,8 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+  import { mdiMapMarker, mdiStore } from "@mdi/js";
+</script>
 
 <style lang="scss" scoped></style>

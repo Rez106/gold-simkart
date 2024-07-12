@@ -5,8 +5,8 @@
   >
     <v-pagination
       :length="length"
-      next-icon="mdi-menu-right"
-      prev-icon="mdi-menu-left"
+      :next-icon="mdiMenuRight"
+      :prev-icon="mdiMenuLeft"
       :total-visible="4"
       v-model="page"
       @update:modelValue="onPageUpdate"
@@ -16,6 +16,8 @@
 </template>
 
 <script setup>
+  import { mdiMenuLeft, mdiMenuRight } from "@mdi/js";
+
   defineProps({
     length: Number,
   });

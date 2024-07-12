@@ -4,7 +4,7 @@
     class="w-full flex flex-col max-sm:p-3 p-10 gap-10 bg-main-black-900 rounded-lg mt-10"
   >
     <section class="flex flex-col items-center mb-5">
-      <v-icon icon="mdi-face-agent" size="80" color="#fff" />
+      <v-icon :icon="mdiFaceAgent" size="80" color="#fff" />
       <p class="text-center text-white text-2xl max-sm:text-xl font-semibold">
         راه‌های ارتباطی با
         <span class="text-main-yellow-400">مزایده</span> سیم‌کارت

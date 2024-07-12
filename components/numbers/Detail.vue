@@ -12,7 +12,7 @@
       :class="{ 'opacity-0': !isShow }"
     >
       <p class="text-white text-xl">
-        <v-icon icon="mdi-sim" color="#ffda0a" />
+        <v-icon :icon="mdiSim" color="#ffda0a" />
         مشخصات سیم‌کارت
       </p>
     </div>
@@ -47,7 +47,7 @@
         <span class="text-white">{{ num.category ? "اعتباری" : "دائمی" }}</span>
       </div>
       <v-btn
-        prepend-icon="mdi-phone-outgoing"
+        :prepend-icon="mdiPhoneOutgoing"
         text="تماس برای خرید"
         rounded="lg"
         color="#222222"
@@ -61,6 +61,8 @@
 </template>
 
 <script setup>
+  import { mdiPhoneOutgoing, mdiSim } from "@mdi/js";
+
   defineProps({
     num: Object,
     isShow: Boolean,

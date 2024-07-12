@@ -8,7 +8,7 @@
       <div
         class="absolute -top-4 -right-4 max-sm:-right-3 p-2 bg-gradient-to-tr from-main-black-900 to-main-black-800 shadow-md rounded-lg text-white font-semibold"
       >
-        <v-icon icon="mdi-information" color="#fff" size="large" />
+        <v-icon :icon="mdiInformation" color="#fff" size="large" />
         چرا <span class="text-main-yellow-400">مزایده</span> سیم‌کارت؟
       </div>
       <p
@@ -31,7 +31,7 @@
           class="w-fit absolute top-1/3 -right-10 max-sm:static p-2 bg-gradient-to-tr from-main-black-900 to-main-black-800 shadow-md rounded-lg text-white font-semibold"
         >
           <v-icon
-            icon="mdi-phone"
+            :icon="mdiPhone"
             color="#fff"
             size="large"
             style="transform: rotate(270deg)"
@@ -69,7 +69,7 @@
         <div
           class="w-fit absolute top-1/3 -right-10 max-sm:static p-2 bg-gradient-to-tr from-main-black-900 to-main-black-800 shadow-md rounded-lg text-white font-semibold"
         >
-          <v-icon icon="mdi-map-marker" color="#fff" size="large" />
+          <v-icon :icon="mdiMapMarker" color="#fff" size="large" />
           <span class="sm:hidden"> آدرس </span>
         </div>
         <p class="text-white font-medium text-center">
@@ -78,7 +78,7 @@
         </p>
         <v-btn
           text="رفتن به نقشه"
-          prepend-icon="mdi-map-marker-path"
+          :prepend-icon="mdiMapMarkerPath"
           rounded="lg"
           color="#6d6d6d"
           target="_blank"
@@ -91,6 +91,13 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+  import {
+    mdiInformation,
+    mdiMapMarker,
+    mdiMapMarkerPath,
+    mdiPhone,
+  } from "@mdi/js";
+</script>
 
 <style lang="scss" scoped></style>

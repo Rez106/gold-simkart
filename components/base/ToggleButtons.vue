@@ -19,6 +19,7 @@
         rounded="xl"
         :ripple="false"
         :text="val"
+        :size="$vuetify.display.xs ? 'small' : undefined"
       >
       </v-btn>
     </v-btn-toggle>

@@ -23,6 +23,7 @@
       watch: false,
     }
   );
+
   onMounted(async () => {
     selectedSort.value = 3;
     return await execute();

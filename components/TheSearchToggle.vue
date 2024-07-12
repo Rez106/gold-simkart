@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!toggleSearch"
-    class="duration-200 lg:hidden p-2 bg-gradient-to-tr from-main-yellow-400 to-main-yellow-200 fixed bottom-5 shadow-xl shadow-main-black-800 left-1/2 -translate-x-1/2 rounded-xl z-10 hover:scale-90 active:scale-90"
+    class="duration-200 cursor-pointer lg:hidden p-2 bg-gradient-to-tr from-main-yellow-400 to-main-yellow-200 fixed bottom-5 shadow-xl shadow-main-black-800 left-1/2 -translate-x-1/2 rounded-xl z-10 hover:scale-90 active:scale-90"
     :class="{
       'w-6/12': isShown,
       'w-2/12': !isShown,
@@ -12,7 +12,7 @@
       v-if="!searchIsLoading"
       class="w-full flex items-center gap-2 justify-center"
     >
-      <v-icon icon="mdi-magnify" color="#3d3d3d" size="x-large" />
+      <v-icon :icon="mdiMagnify" color="#3d3d3d" size="x-large" />
       <transition appear name="fade" mode="out-in">
         <span v-if="isShown" class="text-xl font-semibold text-main-black-700"
           >جستجو</span
@@ -29,6 +29,7 @@
 </template>
 
 <script setup>
+  import { mdiMagnify } from "@mdi/js";
   import loading from "../../public/lottie/loading.json";
   import { Vue3Lottie } from "vue3-lottie";
   const { isShown } = useToggleScroll();

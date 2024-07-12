@@ -1,12 +1,12 @@
 <template>
   <div>
     <p class="text-white font-bold text-2xl p-4">
-      <v-icon icon="mdi-sim" size="x-large" color="#ffda0a" />
+      <v-icon :icon="mdiSim" size="x-large" color="#ffda0a" />
       سیم‌کارت‌های مجموعه
     </p>
     <div class="flex items-center gap-3 p-4 max-sm:flex-col">
       <p class="text-white">
-        <v-icon icon="mdi-sort" size="large" color="#fff" />
+        <v-icon :icon="mdiSort" size="large" color="#fff" />
         ترتیب:
       </p>
       <base-toggle-buttons
@@ -28,6 +28,7 @@
 </template>
 
 <script setup>
+  import { mdiSim, mdiSort } from "@mdi/js";
   const filterStore = useFilterStore();
   const { searchHandler } = filterStore;
   const { selectedSort } = storeToRefs(filterStore);

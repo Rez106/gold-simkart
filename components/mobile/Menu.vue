@@ -10,7 +10,7 @@
           class="p-2 rounded-lg bg-gradient-to-tr from-main-black-900 to-main-black-800"
           @click="closeMenu"
         >
-          <v-icon icon="mdi-close-circle" color="#fff" size="large" />
+          <v-icon :icon="mdiCloseCircle" color="#fff" size="large" />
         </button>
       </div>
       <nuxt-link
@@ -19,7 +19,7 @@
         exact-active-class="!border-main-yellow-400 text-main-yellow-400"
         @click="closeMenu"
       >
-        <v-icon icon="mdi-sim" size="large" />
+        <v-icon :icon="mdiSim" size="large" />
         <span>سیم‌کارت</span>
       </nuxt-link>
       <nuxt-link
@@ -28,7 +28,7 @@
         exact-active-class="!border-main-yellow-400 text-main-yellow-400"
         @click="closeMenu"
       >
-        <v-icon icon="mdi-face-agent" size="large" />
+        <v-icon :icon="mdiFaceAgent" size="large" />
         <span>ارتباط با ما</span>
       </nuxt-link>
       <div
@@ -49,7 +49,7 @@
       <div class="w-full flex justify-between items-center px-4 mt-5">
         <div class="flex items-center gap-2 text-main-black-200">
           <p class="flex items-center gap-1">
-            <v-icon icon="mdi-phone" style="transform: rotate(270deg)" />
+            <v-icon :icon="mdiPhone" style="transform: rotate(270deg)" />
             <span>تماس:</span>
           </p>
           <a
@@ -67,6 +67,8 @@
 </template>
 
 <script setup>
+  import { mdiCloseCircle, mdiFaceAgent, mdiPhone, mdiSim } from "@mdi/js";
+
   const modalStore = useModalStore();
   const { toggleMenu } = storeToRefs(modalStore);
   const { closeMenu } = modalStore;

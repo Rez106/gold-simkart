@@ -17,12 +17,12 @@
         <p
           class="flex items-center gap-1 text-xl text-main-black-300 font-semibold"
         >
-          <v-icon icon="mdi-magnify" size="x-large" color="#d1d1d1" />
+          <v-icon :icon="mdiMagnify" size="x-large" color="#d1d1d1" />
           <span>جستجو</span>
         </p>
         <button type="button" @click="closeSearch">
           <v-icon
-            icon="mdi-close-circle"
+            :icon="mdiCloseCircle"
             size="x-large"
             color="#d1d1d1"
             class="hover:!text-red-500 active:!text-red-500 duration-200"
@@ -55,6 +55,8 @@
 </template>
 
 <script setup>
+  import { mdiCloseCircle, mdiMagnify } from "@mdi/js";
+
   const modalStore = useModalStore();
   const { toggleSearch } = storeToRefs(modalStore);
   const { closeSearch } = modalStore;

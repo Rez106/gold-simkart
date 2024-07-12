@@ -2,7 +2,7 @@
   <div class="w-full text-white">
     <v-btn
       v-ripple="false"
-      :append-icon="isOpen ? 'mdi-menu-up' : 'mdi-menu-down'"
+      :append-icon="isOpen ? mdiMenuUp : mdiMenuDown"
       @click="() => (isOpen = !isOpen)"
       flat
       color="white"
@@ -31,6 +31,8 @@
 </template>
 
 <script setup>
+  import { mdiMenuDown, mdiMenuUp } from "@mdi/js";
+
   const { label } = defineProps({
     label: String,
   });

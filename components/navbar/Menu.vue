@@ -5,17 +5,19 @@
 </template>
 
 <script setup>
+  import { mdiFaceAgent, mdiSim } from "@mdi/js";
+
   const menuItems = [
     {
       id: 1,
       name: "سیم‌کارت",
-      icon: "mdi-sim",
+      icon: mdiSim,
       link: "/",
     },
     {
       id: 2,
       name: "ارتباط باما",
-      icon: "mdi-face-agent",
+      icon: mdiFaceAgent,
       link: "/contact",
     },
   ];

@@ -5,13 +5,15 @@
       class="p-2 rounded-lg bg-gradient-to-tr from-main-black-900 to-main-black-800"
       @click="openMenu"
     >
-      <v-icon icon="mdi-menu" color="#fff" size="large" />
+      <v-icon :icon="mdiMenu" color="#fff" size="large" />
     </button>
     <TheLogo />
   </div>
 </template>
 
 <script setup>
+  import { mdiMenu } from "@mdi/js";
+
   const modalStore = useModalStore();
   const { openMenu } = modalStore;
 </script>

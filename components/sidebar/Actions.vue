@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex items-center gap-3 justify-center">
     <v-btn
-      :prepend-icon="!searchIsLoading ? 'mdi-magnify' : undefined"
+      :prepend-icon="!searchIsLoading ? mdiMagnify : undefined"
       color="#ffda0a"
       class="mt-3 flex-1 duration-200"
       rounded="lg"
@@ -18,7 +18,7 @@
       />
     </v-btn>
     <v-btn
-      icon="mdi-restore"
+      :icon="mdiRestore"
       color="#fff"
       class="mt-3"
       rounded="circle"
@@ -29,6 +29,7 @@
 </template>
 
 <script setup>
+  import { mdiMagnify, mdiRestore } from "@mdi/js";
   import loading from "../../public/lottie/loading.json";
   import { Vue3Lottie } from "vue3-lottie";
   const filterStore = useFilterStore();

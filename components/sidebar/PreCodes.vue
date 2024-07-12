@@ -16,7 +16,7 @@
       <v-chip
         v-for="(c, index) in checked.filter((code) => code !== 0)"
         :key="index"
-        append-icon="mdi-close"
+        :append-icon="mdiClose"
         @click="uncheck(c)"
         flat
         color="red"
@@ -48,6 +48,8 @@
 </template>
 
 <script setup>
+  import { mdiClose } from "@mdi/js";
+
   const filterStore = useFilterStore();
   const { selectedPreCode: checked, isAllPreCode } = storeToRefs(filterStore);
 

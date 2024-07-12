@@ -22,7 +22,7 @@
           text="برگشت به خانه"
           color="#222222"
           elevation="0"
-          prepend-icon="mdi-home"
+          :prepend-icon="mdiHome"
           size="large"
           rounded="lg"
           class="mt-5"
@@ -46,6 +46,7 @@
   import { Vue3Lottie } from "vue3-lottie";
   import notfound from "./public/lottie/notfound.json";
   import erroranimation from "./public/lottie/erroranimation.json";
+  import { mdiHome } from "@mdi/js";
 
   const error = useError();
   console.log(error.value);

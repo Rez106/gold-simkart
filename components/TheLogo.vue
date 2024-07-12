@@ -1,7 +1,7 @@
 <template>
   <nuxt-link to="/">
     <div class="w-fit flex items-center gap-3">
-      <v-img src="/logo.svg" width="40" height="60" />
+      <v-img src="/logo.svg" width="40" height="60" alt="logo" />
       <div class="">
         <h1 class="text-main-black-100 text-xl">
           <span class="text-main-yellow-400 font-semibold">Mozayede</span>

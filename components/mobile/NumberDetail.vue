@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center gap-2 rounded-b-lg duration-300 border-main-black-400 text-base max-small:text-xs"
+    class="flex flex-col items-center gap-2 rounded-b-lg duration-300 border-main-black-400 text-base max-small:text-xs max-[401px]:text-xs"
     :class="{
       'h-0 overflow-hidden border-none opacity-0 bg-main-black-600': !isShow,
       'max-[450px]:h-42  h-36 border-[1px] border-t-transparent p-2 px-2 bg-main-black-900':
@@ -39,7 +39,7 @@
       </div>
     </div>
     <v-btn
-      prepend-icon="mdi-phone-outgoing"
+      :prepend-icon="mdiPhoneOutgoing"
       text="تماس برای خرید"
       rounded="lg"
       color="#222222"
@@ -51,6 +51,8 @@
 </template>
 
 <script setup>
+  import { mdiPhoneOutgoing } from "@mdi/js";
+
   defineProps({
     num: Object,
     isShow: Boolean,

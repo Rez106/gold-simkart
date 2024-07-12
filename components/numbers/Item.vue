@@ -66,7 +66,7 @@
         @click="$emit('toggleShow')"
       >
         <v-icon
-          :icon="isShow ? 'mdi-menu-up' : 'mdi-menu-down'"
+          :icon="isShow ? mdiMenuUp : mdiMenuDown"
           size="large"
           color="#fff"
         />
@@ -76,6 +76,8 @@
 </template>
 
 <script setup>
+  import { mdiMenuDown, mdiMenuUp } from "@mdi/js";
+
   defineProps({
     num: Object,
     isShow: Boolean,

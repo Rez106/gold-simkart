@@ -21,7 +21,7 @@
         </div>
         <div class="flex items-center gap-2 text-main-black-200">
           <p>
-            <v-icon icon="mdi-phone" style="transform: rotate(270deg)" />
+            <v-icon :icon="mdiPhone" style="transform: rotate(270deg)" />
             <span>تماس:</span>
           </p>
           <a
@@ -39,6 +39,8 @@
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import { mdiPhone } from '@mdi/js';
+</script>
 
 <style lang="scss" scoped></style>
