@@ -17,6 +17,8 @@
 </template>
 
 <script setup>
+  import { mdiFaceAgent } from "@mdi/js";
+
   useHead({
     title: "ارتباط | مزایده سیم‌کارت",
   });
