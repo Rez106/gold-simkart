@@ -55,7 +55,7 @@
 
         <numbers-pagination
           @updatePage="pageHandler"
-          :length="Math.floor(allNumbers?.length / 15)"
+          :length="Math.ceil((allNumbers?.length || 0) / 15)"
         />
       </div>
     </template>
