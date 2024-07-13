@@ -13,7 +13,7 @@
       class="w-full flex items-center justify-around gap-10 mt-10 max-sm:flex-col"
     >
       <section
-        class="w-max max-sm:w-full text-center"
+        class="w-full max-sm:w-full lg:w-fit text-center"
         v-for="item in coordinates"
         :key="item.id"
       >
@@ -24,7 +24,7 @@
           }}</span>
         </h1>
         <div
-          class="w-full h-[200px] mt-5 2xl:h-[300px] lg:w-[500px] bg-white p-2 rounded-lg"
+          class="min-w-full h-[250px] mt-5 2xl:h-[300px] lg:w-[500px] bg-white p-2 rounded-lg"
         >
           <LMap
             :zoom="14"
