@@ -105,7 +105,7 @@
         class="flex items-start justify-between py-2 max-sm:flex-col max-sm:items-center max-sm:gap-5"
       >
         <p class="text-white opacity-50 text-xs text-center">
-          - کلیه حقوق مادی و معنوی مربوط به گلد سیم‌کارت است و هرگونه کپی
+          - کلیه حقوق مادی و معنوی مربوط به مزایده سیم‌کارت است و هرگونه کپی
           برداری، موجب پیگرد قانونی است.
         </p>
         <h5 style="direction: ltr" class="text-white opacity-50 text-xs">
