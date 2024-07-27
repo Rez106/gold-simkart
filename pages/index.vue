@@ -53,10 +53,7 @@
           />
         </div>
 
-        <numbers-pagination
-          @updatePage="pageHandler"
-          :length="Math.ceil((allNumbers?.length || 0) / 15)"
-        />
+        <numbers-pagination />
       </div>
     </template>
   </nuxt-layout>
@@ -66,16 +63,14 @@
   import { Vue3Lottie } from "vue3-lottie";
   import numberserror from "../public/lottie/numberserror.json";
   const filterStore = useFilterStore();
-  const { allNumbers, searchError, searchIsLoading } = storeToRefs(filterStore);
+  const { allNumbers, searchError, searchIsLoading, pageNumber } =
+    storeToRefs(filterStore);
+
   const { width } = useDisplay();
+
   const isMobile = computed(() => {
     return width.value < 640;
   });
-  const pageNumber = ref(1);
-
-  const pageHandler = (page) => {
-    pageNumber.value = page;
-  };
 
   useHead({
     title: "سیم‌کارت | مزایده سیم‌کارت",

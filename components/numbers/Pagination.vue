@@ -4,11 +4,11 @@
     v-if="length > 0"
   >
     <v-pagination
-      :length="length"
+      :length
       :next-icon="mdiMenuRight"
       :prev-icon="mdiMenuLeft"
       :total-visible="4"
-      v-model="page"
+      v-model="pageNumber"
       @update:modelValue="onPageUpdate"
       rounded="lg"
     ></v-pagination>
@@ -18,18 +18,16 @@
 <script setup>
   import { mdiMenuLeft, mdiMenuRight } from "@mdi/js";
 
-  defineProps({
-    length: Number,
-  });
+  const filterStore = useFilterStore();
+  const { allNumbers, pageNumber } = storeToRefs(filterStore);
 
-  const page = ref(1);
-
-  const emits = defineEmits(["updatePage"]);
-
-  const onPageUpdate = (page) => {
-    emits("updatePage", page);
+  const onPageUpdate = () => {
     window.scrollTo({ behavior: "smooth", top: 0 });
   };
+
+  const length = computed(() => {
+    return Math.ceil((allNumbers?.value?.length || 0) / 15);
+  });
 </script>
 
 <style lang="scss" scoped></style>

@@ -25,7 +25,7 @@ export const useFilterStore = defineStore("filterStore", () => {
   //Search Request
   const searchError = ref(null);
   const searchIsLoading = ref(true);
-
+  const pageNumber = ref(1);
   //Filters and Conditions for checkboxes etc.
   const isAllOperators = ref(true);
   const isAllStatus = ref(true);
@@ -64,6 +64,7 @@ export const useFilterStore = defineStore("filterStore", () => {
     try {
       searchIsLoading.value = true;
       searchError.value = null;
+      numbers.value = [];
       closeSearch();
       const response = await $fetch("/api/numbers/search", {
         query: {
@@ -80,6 +81,7 @@ export const useFilterStore = defineStore("filterStore", () => {
         method: "GET",
       });
       numbers.value = response;
+      pageNumber.value = 1;
     } catch (error) {
       searchError.value = error;
     } finally {
@@ -102,6 +104,7 @@ export const useFilterStore = defineStore("filterStore", () => {
     isAllPreCode,
     searchIsLoading,
     searchError,
+    pageNumber,
     reset,
     searchHandler,
   };
