@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center gap-3">
     <nuxt-link
-      to="https://www.instagram.com/mozayede_simkart2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+      to="https://www.instagram.com/mozayede_simkart?igsh=YjYxbTcwMDh2ZDB5"
       target="_blank"
       class="bg-main-black-400 rounded-full p-2 duration-300 hover:bg-red-500 active:bg-red-500"
     >
