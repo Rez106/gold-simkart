@@ -16,6 +16,10 @@ const formatSort = (sortId) => {
     : null;
 };
 
+const formatCategory = (catId) => {
+  return catId === 1 ? "false" : catId === 2 ? "true" : null;
+};
+
 export const useFilterStore = defineStore("filterStore", () => {
   const { closeSearch } = useModalStore();
 
@@ -36,7 +40,7 @@ export const useFilterStore = defineStore("filterStore", () => {
   const enteredNumbers = ref("");
   const enteredMinPrice = ref(0);
   const enteredMaxPrice = ref(null);
-  const selectedCategory = ref(null);
+  const selectedCategory = ref(0);
   const selectedSort = ref(null);
 
   const allNumbers = computed(() => {
@@ -50,7 +54,7 @@ export const useFilterStore = defineStore("filterStore", () => {
     enteredNumbers.value = "";
     enteredMinPrice.value = 0;
     enteredMaxPrice.value = null;
-    selectedCategory.value = null;
+    selectedCategory.value = 0;
     isAllOperators.value = true;
     isAllStatus.value = true;
     isAllPreCode.value = true;
@@ -74,8 +78,7 @@ export const useFilterStore = defineStore("filterStore", () => {
           digit: enteredNumbers.value,
           min_price: enteredMinPrice.value,
           max_price: enteredMaxPrice.value,
-          category:
-            selectedCategory.value === null ? null : !!selectedCategory.value,
+          category: formatCategory(selectedCategory.value),
           sort_by: formatSort(selectedSort.value),
         },
         method: "GET",
