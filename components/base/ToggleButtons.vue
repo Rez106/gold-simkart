@@ -39,7 +39,7 @@
   };
 
   onMounted(() => {
-    return (selected.value = isSort ? 3 : 0);
+    return (selected.value = isSort ? 1 : 0);
   });
 </script>
 

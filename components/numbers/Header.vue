@@ -197,7 +197,7 @@
   };
 
   onMounted(async () => {
-    selectedSort.value = 3;
+    selectedSort.value = 1;
     return await execute();
   });
 
