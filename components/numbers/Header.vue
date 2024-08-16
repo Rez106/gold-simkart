@@ -2,7 +2,7 @@
   <div>
     <p class="text-white font-bold text-2xl p-4">
       <v-icon :icon="mdiSim" size="x-large" color="#ffda0a" />
-      سیم‌کارت‌های مجموعه
+      سیم‌کارت‌ها
     </p>
     <div v-if="!$vuetify.display.xs">
       <div class="flex items-center gap-3 p-4 max-sm:flex-col">

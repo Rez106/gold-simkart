@@ -14,12 +14,6 @@
       icon: mdiSim,
       link: "/",
     },
-    {
-      id: 2,
-      name: "ارتباط باما",
-      icon: mdiFaceAgent,
-      link: "/contact",
-    },
   ];
 </script>
 

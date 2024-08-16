@@ -47,16 +47,6 @@
         نوع شماره:
         <span class="text-white">{{ num.category ? "اعتباری" : "دائمی" }}</span>
       </div>
-      <v-btn
-        :prepend-icon="mdiPhoneOutgoing"
-        text="تماس برای خرید"
-        rounded="lg"
-        color="#222222"
-        size="large"
-        class="w-fit"
-        style="border: 1px solid #ffda0a; color: #ffda0a"
-        to="/contact"
-      ></v-btn>
     </div>
   </div>
 </template>
