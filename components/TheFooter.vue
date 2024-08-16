@@ -39,36 +39,7 @@
               </li>
             </ul>
           </div>
-          <div class="flex flex-col items-start">
-            <div
-              class="flex py-4 items-center gap-1 font-semibold text-main-black-100"
-            >
-              <v-icon :icon="mdiFaceAgent" color="#ffda0a" />
-              <span>ارتباط با ما</span>
-            </div>
-            <ul
-              class="text-main-black-300 text-sm flex flex-col gap-1 [&>*]:underline-offset-2"
-            >
-              <li class="hover:underline cursor-pointer">
-                <nuxt-link to="/contact">حضوری</nuxt-link>
-              </li>
-              <li class="hover:underline cursor-pointer">
-                <nuxt-link to="tel:09010000550"> تماس </nuxt-link>
-              </li>
-              <li class="hover:underline cursor-pointer">
-                <nuxt-link to="https://t.me/Gold_simkart" target="_blank"
-                  >تلگرام</nuxt-link
-                >
-              </li>
-              <li class="hover:underline cursor-pointer">
-                <nuxt-link
-                  to="https://www.instagram.com/mozayede_simkart2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                  target="_blank"
-                  >اینستاگرام</nuxt-link
-                >
-              </li>
-            </ul>
-          </div>
+
           <div class="">
             <div
               class="flex py-4 items-center gap-1 font-semibold text-main-black-100"
@@ -92,12 +63,6 @@
         </section>
         <section class="flex flex-col gap-3 items-end max-sm:items-center">
           <the-logo v-if="!$vuetify.display.smAndDown" />
-          <p
-            class="text-white opacity-80 text-sm font-semibold self-start max-sm:self-center"
-          >
-            اصفهان، سیتی‌سنتر، طبقه دوم
-          </p>
-          <the-socials />
         </section>
       </div>
       <v-divider class="mt-5" />
@@ -105,8 +70,7 @@
         class="flex items-start justify-between py-2 max-sm:flex-col max-sm:items-center max-sm:gap-5"
       >
         <p class="text-white opacity-50 text-xs text-center">
-          - کلیه حقوق مادی و معنوی مربوط به مزایده سیم‌کارت است و هرگونه کپی
-          برداری، موجب پیگرد قانونی است.
+          - هرگونه کپی برداری، موجب پیگرد قانونی است.
         </p>
         <h5 style="direction: ltr" class="text-white opacity-50 text-xs">
           © 2024 Copyright

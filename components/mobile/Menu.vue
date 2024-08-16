@@ -22,15 +22,7 @@
         <v-icon :icon="mdiSim" size="large" />
         <span>سیم‌کارت</span>
       </nuxt-link>
-      <nuxt-link
-        to="/contact"
-        class="text-2xl pr-4 border-r-[6px] border-transparent flex py-4 items-center gap-1 font-semibold duration-200 hover:text-main-yellow-400 active:text-main-yellow-400 text-main-black-200"
-        exact-active-class="!border-main-yellow-400 text-main-yellow-400"
-        @click="closeMenu"
-      >
-        <v-icon :icon="mdiFaceAgent" size="large" />
-        <span>ارتباط با ما</span>
-      </nuxt-link>
+
       <div
         class="flex flex-col gap-3 items-start text-main-black-200 text-sm self-start pr-5 opacity-50"
       >
@@ -43,24 +35,6 @@
         <nuxt-link to="/" :disabled="true" class="cursor-not-allowed"
           >راهنما</nuxt-link
         >
-      </div>
-    </div>
-    <div class="w-full flex flex-col items-center py-3">
-      <div class="w-full flex justify-between items-center px-4 mt-5">
-        <div class="flex items-center gap-2 text-main-black-200">
-          <p class="flex items-center gap-1">
-            <v-icon :icon="mdiPhone" style="transform: rotate(270deg)" />
-            <span>تماس:</span>
-          </p>
-          <a
-            href="tel:+989010000550"
-            class="font-semibold duration-150 text-main-yellow-400 hover:text-white active:text-white"
-            style="direction: ltr"
-          >
-            0901 0000 550
-          </a>
-        </div>
-        <the-socials />
       </div>
     </div>
   </nav>
