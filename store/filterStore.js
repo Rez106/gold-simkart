@@ -37,7 +37,15 @@ export const useFilterStore = defineStore("filterStore", () => {
   const selectedOperators = ref([]);
   const selectedStatus = ref([]);
   const selectedPreCode = ref([]);
-  const enteredNumbers = ref("");
+  const inputs = ref({
+    input1: "",
+    input2: "",
+    input3: "",
+    input4: "",
+    input5: "",
+    input6: "",
+    input7: "",
+  });
   const enteredMinPrice = ref(0);
   const enteredMaxPrice = ref(null);
   const selectedCategory = ref(0);
@@ -51,7 +59,15 @@ export const useFilterStore = defineStore("filterStore", () => {
     selectedOperators.value = [];
     selectedStatus.value = [];
     selectedPreCode.value = [];
-    enteredNumbers.value = "";
+    inputs.value = {
+      input1: "",
+      input2: "",
+      input3: "",
+      input4: "",
+      input5: "",
+      input6: "",
+      input7: "",
+    };
     enteredMinPrice.value = 0;
     enteredMaxPrice.value = null;
     selectedCategory.value = 0;
@@ -75,7 +91,13 @@ export const useFilterStore = defineStore("filterStore", () => {
           operator_type: formattedOpts,
           status: formattedStatus,
           pre_code: formattedPreCode,
-          digit: enteredNumbers.value,
+          digit1: inputs.value.input1 ? inputs.value.input1 : null,
+          digit2: inputs.value.input2 ? inputs.value.input2 : null,
+          digit3: inputs.value.input3 ? inputs.value.input3 : null,
+          digit4: inputs.value.input4 ? inputs.value.input4 : null,
+          digit5: inputs.value.input5 ? inputs.value.input5 : null,
+          digit6: inputs.value.input6 ? inputs.value.input6 : null,
+          digit7: inputs.value.input7 ? inputs.value.input7 : null,
           min_price: enteredMinPrice.value,
           max_price: enteredMaxPrice.value,
           category: formatCategory(selectedCategory.value),
@@ -97,7 +119,7 @@ export const useFilterStore = defineStore("filterStore", () => {
     selectedOperators,
     selectedStatus,
     selectedPreCode,
-    enteredNumbers,
+    inputs,
     enteredMinPrice,
     enteredMaxPrice,
     selectedCategory,
