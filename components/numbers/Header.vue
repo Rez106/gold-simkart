@@ -8,11 +8,11 @@
       <div class="flex items-center gap-3 p-4 max-sm:flex-col">
         <p class="text-white">
           <v-icon
-            :icon="mdiCreation"
+            :icon="mdiSim"
             :size="$vuetify.display.xs ? 'small' : 'large'"
             color="#fff"
           />
-          پیشنهاد‌ها:
+          سیم‌کارت‌:
         </p>
         <base-toggle-buttons
           :values="[
@@ -197,7 +197,7 @@
   };
 
   onMounted(async () => {
-    selectedSort.value = 3;
+    selectedSort.value = 1;
     return await execute();
   });
 
