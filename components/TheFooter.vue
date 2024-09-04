@@ -1,5 +1,5 @@
 <template>
-  <footer class="mt-10 w-full bg-main-black-700 pt-8">
+  <footer class="w-full bg-main-black-700 pt-8">
     <nuxt-layout name="container">
       <div
         class="flex sm:items-center justify-between max-sm:flex-col max-sm:gap-3"
