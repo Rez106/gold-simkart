@@ -9,7 +9,11 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/leaflet",
     "@pinia/nuxt",
+    "@nuxt/eslint",
   ],
+  eslint: {
+    checker: true,
+  },
   pinia: {
     storesDirs: ["./store/**"],
   },
