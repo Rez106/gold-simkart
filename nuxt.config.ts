@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
+  compatibilityDate: "2024-09-04",
   devtools: { enabled: false },
   modules: [
     "@nuxtjs/tailwindcss",
@@ -8,7 +9,11 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/leaflet",
     "@pinia/nuxt",
+    "@nuxt/eslint",
   ],
+  eslint: {
+    checker: true,
+  },
   pinia: {
     storesDirs: ["./store/**"],
   },

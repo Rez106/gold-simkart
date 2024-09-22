@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+   :root {
+      --main-yellow: #ffda0a;
+      --body-bg-first: #181818;
+      --body-bg-second: #191919;
+      --primary-black: #3d3d3d;
+   }
 
    input[type="number"]::-webkit-inner-spin-button,
    input[type="number"]::-webkit-outer-spin-button {

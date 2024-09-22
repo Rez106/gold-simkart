@@ -6,10 +6,10 @@
       'opacity-0 -top-full': !toggleSearch,
     }"
     @click="closeSearch"
-  ></div>
+  />
 
   <div
-    class="lg:hidden z-20 duration-500 max-h-dvh fixed right-0 w-full min-[500px]:min-h-[60dvh] rounded-t-xl shadow-inner shadow-main-black-900 p-2 pb-0 bg-gradient-to-tr from-main-black-950 to-main-black-900"
+    class="lg:hidden z-20 duration-500 max-h-dvh fixed right-0 w-full min-[500px]:min-h-[60dvh] rounded-t-xl shadow-inner shadow-main-black-900 pb-0 bg-gradient-to-tr from-main-black-950 to-main-black-900"
     :class="{ 'bottom-0': toggleSearch, '-bottom-full': !toggleSearch }"
   >
     <div class="max-sm:w-full w-10/12 mx-auto p-5 pt-2 rounded-t-lg">
